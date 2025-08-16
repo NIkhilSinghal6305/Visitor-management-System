@@ -1,0 +1,420 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  perspective: 1200px;
+}
+
+html {
+  font-size: clamp(16px, 1vw, 20px);
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+/*Header*/
+.navbar {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, #243367, #16253c);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar .logo a {
+  text-decoration: none;
+  color: black;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+.navbar .logo a span {
+  color: #cfefff;
+}
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  transition: all 0.3s;
+}
+.navbar .nav-links a {
+  text-decoration: none;
+  color: black;
+  color: #cfefff;
+  font-weight: 400;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease-in-out;
+}
+.navbar .nav-links a:hover {
+  transform: translateX(6px);
+  color: #00f5ff;
+}
+.navbar .nav-links a:active {
+  color: #fbbf24;
+}
+.navbar .register-button a button {
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(90deg, #00f5ff, #008cff);
+  color: black;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.navbar .register-button a button:hover {
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  color: black;
+}
+
+/*main section*/
+main {
+  width: 100%;
+}
+
+/*hero section*/
+.hero {
+  aspect-ratio: 16/6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  background: linear-gradient(rgba(5, 15, 35, 0.2), rgba(0, 10, 20, 0.1)), url(https://upload.wikimedia.org/wikipedia/commons/9/96/Science_Museum_of_Virginia_20070916.jpg) no-repeat center center/cover;
+  color: #e5f4ff;
+}
+.hero .learnmore-button a button {
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(90deg, #00f5ff, #008cff);
+  color: black;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.hero .learnmore-button a button:hover {
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  color: black;
+}
+.hero h1 {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.about-us {
+  width: 100%;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.about-us .card {
+  background: linear-gradient(145deg, #1d468f, #1b3d6b);
+  flex-shrink: 0;
+  max-width: 420px;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-us .card img {
+  height: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.about-us .card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
+.about-us .card p {
+  opacity: 0.8;
+  line-height: 1.3;
+  font-size: 1.2rem;
+  color: #cfefff;
+}
+.about-us .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #cfefff;
+}
+
+.gallery {
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+.gallery h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #0e0e0e;
+  font-weight: 600;
+  position: sticky;
+  left: 0;
+}
+.gallery .card-container {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+.gallery .card-container img {
+  height: 400px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery .card-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(28, 39, 75, 0.7960784314), #142743);
+  color: #cfefff;
+  padding: 2rem 3rem;
+}
+footer .content {
+  display: flex;
+  justify-content: space-evenly;
+}
+footer .content h3 {
+  color: black;
+  font-weight: 600;
+}
+footer .content svg {
+  width: 20px;
+  height: 20px;
+  fill: #0e0e0e;
+}
+footer .content .contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+footer .content .contacts p {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: black;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+footer .content .contacts p a {
+  display: inline-block;
+  text-decoration: none;
+  color: #cfefff;
+  font-weight: 400;
+  opacity: 0.8;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+footer .content .contacts p a:hover {
+  transform: translateX(6px);
+  color: #00f5ff;
+}
+footer .content .key-features ul {
+  list-style: none;
+  margin-top: 0.8rem;
+}
+footer .content .key-features ul li {
+  padding: 0.4rem 1rem;
+  transition: all 0.3s ease;
+}
+footer .content .key-features ul li:hover {
+  transform: translateX(3px);
+  color: #00f5ff;
+}
+footer .content .quick-links ul {
+  list-style: none;
+  margin-top: 0.8rem;
+}
+footer .content .quick-links ul li {
+  padding: 0.4rem 1rem;
+}
+footer .content .quick-links ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #cfefff;
+  transition: all 0.3s ease;
+}
+footer .content .quick-links ul li a:hover {
+  transform: translateX(3px);
+  color: #00f5ff;
+}
+footer .content .social-media div {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+}
+footer .content .social-media div svg {
+  width: 50px;
+  fill: #cfefff;
+  transition: all 0.3s ease-in-out;
+}
+footer .content .social-media div svg:hover {
+  fill: #00f5ff;
+  transform: scale(1.05);
+}
+footer .footer {
+  padding-top: 2rem;
+  text-align: center;
+  color: #9bbbdc;
+}
+footer .footer p {
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .navbar .logo a {
+    font-size: 1.8rem;
+  }
+  .navbar .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .navbar .nav-links a {
+    font-size: 1rem;
+  }
+  .navbar .register-button a button {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+  /* Hero section */
+  .hero {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero .learnmore-button a button {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+  /* About Us cards */
+  .about-us {
+    padding: 2rem 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-us .card {
+    width: 100%;
+    max-width: 350px;
+    padding: 1rem;
+  }
+  .about-us .card h2 {
+    font-size: 1.2rem;
+  }
+  .about-us .card p {
+    font-size: 1rem;
+  }
+  .gallery {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .gallery .card-container {
+    transform: none !important;
+    gap: 0.8rem;
+    padding: 0 1rem;
+  }
+  .gallery .card-container img {
+    width: 300px;
+    height: auto;
+    scroll-snap-align: center;
+  }
+  .gallery::-webkit-scrollbar {
+    display: none;
+  }
+  /* Footer */
+  footer {
+    padding: 1.5rem;
+  }
+  footer .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+  footer .content .contacts,
+  footer .content .key-features,
+  footer .content .quick-links,
+  footer .content .social-media {
+    width: 100%;
+  }
+  footer .content h3 {
+    font-size: 1.2rem;
+  }
+  footer .content p,
+  footer .content a,
+  footer .content li {
+    font-size: 1rem;
+  }
+  footer .content .social-media div {
+    justify-content: center;
+  }
+  footer .content .social-media div svg {
+    width: 35px;
+  }
+  footer .footer p {
+    font-size: 1rem;
+  }
+}
+/* Extra small devices */
+@media (max-width: 480px) {
+  .navbar .logo a {
+    font-size: 1.5rem;
+  }
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  .about-us .card h2 {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=style.css.map */

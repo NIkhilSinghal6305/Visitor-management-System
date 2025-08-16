@@ -1,0 +1,476 @@
+@mixin anchortag {
+  text-decoration: none;
+  color: black;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  perspective: 1200px;
+}
+html {
+  font-size: clamp(16px, 1vw, 20px);
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+/*Header*/
+
+.navbar {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, #243367, #16253c);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  .logo {
+    a {
+      @include anchortag();
+      width: fit-content;
+      display: flex;
+      font-size: 2.2rem;
+      font-weight: 500;
+      span {
+        color: #cfefff;
+      }
+    }
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    transition: all 0.3s;
+    a {
+      @include anchortag();
+      color: #cfefff;
+      font-weight: 400;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: translateX(6px);
+        color: #00f5ff;
+      }
+      &:active {
+        color: #fbbf24;
+      }
+    }
+  }
+  .register-button {
+    a {
+      button {
+        padding: 0.4rem 0.8rem;
+        background: linear-gradient(90deg, #00f5ff, #008cff);
+        color: black;
+        font-weight: 500;
+        border: none;
+        border-radius: 0.4rem;
+        font-size: 1rem;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background: linear-gradient(90deg, #ffd700, #ff8c00);
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+/*main section*/
+main {
+  width: 100%;
+}
+
+/*hero section*/
+.hero {
+  aspect-ratio: 16/6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  background: linear-gradient(rgba(5, 15, 35, 0.2), rgba(0, 10, 20,0.1)),
+    url(https://upload.wikimedia.org/wikipedia/commons/9/96/Science_Museum_of_Virginia_20070916.jpg)
+      no-repeat center center/cover;
+  color: #e5f4ff;
+
+  .learnmore-button {
+    a {
+      button {
+        padding: 0.4rem 0.8rem;
+        background: linear-gradient(90deg, #00f5ff, #008cff);
+        color: black;
+        font-weight: 500;
+        border: none;
+        border-radius: 0.4rem;
+        font-size: 1rem;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background: linear-gradient(90deg, #ffd700, #ff8c00);
+          color: black;
+        }
+      }
+    }
+  }
+
+  h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.about-us {
+  width: 100%;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  .card {
+    background: linear-gradient(145deg, #1d468f, #1b3d6b);
+    flex-shrink: 0;
+    max-width: 420px;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    img {
+      height: 30px;
+      width: fit-content;
+      object-fit: contain;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    p {
+      opacity: 0.8;
+      line-height: 1.3;
+      font-size: 1.2rem;
+      color: #cfefff;
+    }
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #cfefff;
+    }
+  }
+}
+
+.gallery {
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+  h1{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #0e0e0e;
+    font-weight: 600;
+    position: sticky;
+    left: 0;
+  }
+
+  .card-container {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+
+    img {
+      height: 400px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background: linear-gradient(180deg, #1c274bcb, #142743);
+  color: #cfefff;
+  padding: 2rem 3rem;
+  .content {
+    display: flex;
+    justify-content: space-evenly;
+    h3 {
+        color: black;
+        font-weight: 600;
+      }
+     svg{
+          width: 20px;
+          height: 20px;
+          fill: #0e0e0e;
+        }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: black;
+        font-weight: 600;
+        font-size: 1.2rem;
+       
+        a {
+          display: inline-block;
+          text-decoration: none;
+          color: #cfefff;
+          font-weight: 400;
+          opacity: 0.8;
+          font-size: 1.1rem;
+          transition: all 0.3s ease;
+          &:hover {
+            transform: translateX(6px);
+            color: #00f5ff;
+          }
+        }
+      }
+    }
+    .key-features {
+      
+      ul {
+        list-style: none;
+        margin-top: 0.8rem;
+        li {
+          padding: 0.4rem 1rem;
+          transition: all 0.3s ease;
+          &:hover {
+            transform: translateX(3px);
+            color: #00f5ff;
+          }
+        }
+      }
+    }
+    .quick-links {
+      ul {
+        list-style: none;
+        margin-top: 0.8rem;
+        li {
+          padding: 0.4rem 1rem;
+          a {
+            display: inline-block;
+            text-decoration: none;
+            color: #cfefff;
+            transition: all 0.3s ease;
+            &:hover {
+              transform: translateX(3px);
+              color: #00f5ff;
+            }
+          }
+        }
+      }
+    }
+    .social-media {
+      div {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.5rem 0.8rem;
+        svg {
+          width: 50px;
+          fill: #cfefff;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            fill: #00f5ff;
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding-top: 2rem;
+    text-align: center;
+    color: #9bbbdc;
+    p {
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    .logo a {
+      font-size: 1.8rem;
+    }
+
+    .nav-links {
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+
+      a {
+        font-size: 1rem;
+      }
+    }
+
+    .register-button a button {
+      font-size: 0.9rem;
+      padding: 0.3rem 0.6rem;
+    }
+  }
+
+  /* Hero section */
+  .hero {
+    height: auto;
+    padding: 3rem 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+    
+    .learnmore-button a button {
+      font-size: 0.9rem;
+      padding: 0.3rem 0.6rem;
+    }
+  }
+
+  /* About Us cards */
+  .about-us {
+    padding: 2rem 1rem;
+    flex-direction: column;
+    align-items: center;
+
+    .card {
+      width: 100%;
+      max-width: 350px;
+      padding: 1rem;
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .gallery {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    .card-container {
+      transform: none !important; // Disable JS movement on mobile
+      gap: 0.8rem;
+      padding: 0 1rem;
+
+      img {
+        width: 300px;
+        height: auto;
+
+        scroll-snap-align: center;
+      }
+    }
+
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Footer */
+  footer {
+    padding: 1.5rem;
+
+    .content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+
+      .contacts,
+      .key-features,
+      .quick-links,
+      .social-media {
+        width: 100%;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p,
+      a,
+      li {
+        font-size: 1rem;
+      }
+
+      .social-media div {
+        justify-content: center;
+
+        svg {
+          width: 35px;
+        }
+      }
+    }
+
+    .footer {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .navbar .logo a {
+    font-size: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-us .card h2 {
+    font-size: 1rem;
+  }
+}
