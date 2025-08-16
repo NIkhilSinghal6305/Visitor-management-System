@@ -225,13 +225,14 @@ footer {
         color: black;
         font-weight: 600;
       }
-     svg{
+     
+
+    .contacts {
+      svg{
           width: 20px;
           height: 20px;
           fill: #0e0e0e;
         }
-
-    .contacts {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -297,15 +298,16 @@ footer {
     .social-media {
       div {
         display: flex;
+        // align-items: center;
+        
         gap: 0.5rem;
         padding: 0.5rem 0.8rem;
         svg {
-          width: 50px;
           fill: #cfefff;
           transition: all 0.3s ease-in-out;
           &:hover {
             fill: #00f5ff;
-            transform: scale(1.05);
+            
           }
         }
       }

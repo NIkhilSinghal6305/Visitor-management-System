@@ -211,16 +211,16 @@ footer .content h3 {
   color: black;
   font-weight: 600;
 }
-footer .content svg {
-  width: 20px;
-  height: 20px;
-  fill: #0e0e0e;
-}
 footer .content .contacts {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+}
+footer .content .contacts svg {
+  width: 20px;
+  height: 20px;
+  fill: #0e0e0e;
 }
 footer .content .contacts p {
   display: flex;
@@ -278,13 +278,11 @@ footer .content .social-media div {
   padding: 0.5rem 0.8rem;
 }
 footer .content .social-media div svg {
-  width: 50px;
   fill: #cfefff;
   transition: all 0.3s ease-in-out;
 }
 footer .content .social-media div svg:hover {
   fill: #00f5ff;
-  transform: scale(1.05);
 }
 footer .footer {
   padding-top: 2rem;
