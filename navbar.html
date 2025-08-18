@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  perspective: 1200px;
+}
+
+html {
+  font-size: clamp(16px, 1vw, 20px);
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+        .navbar {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, #243367, #16253c);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar .logo a {
+  text-decoration: none;
+  color: black;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+.navbar .logo a span {
+  color: #cfefff;
+}
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  transition: all 0.3s;
+}
+.navbar .nav-links a {
+  text-decoration: none;
+  color: black;
+  color: #cfefff;
+  font-weight: 400;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease-in-out;
+}
+.navbar .nav-links a:hover {
+  transform: translateX(6px);
+  color: #00f5ff;
+}
+.navbar .nav-links a:active {
+  color: #fbbf24;
+}
+.navbar .register-button a button {
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(90deg, #00f5ff, #008cff);
+  color: black;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.navbar .register-button a button:hover {
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  color: black;
+}
+    </style>
+</head>
+<body>
+     <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <span><i>Science Express</i></span>
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#about-us  ">About Us</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#">Admin Panel</a>
+            <a href="#">Current Bookings</a>
+            <a href="#contact-footer">Contact Us</a>
+
+            <div class="register-button">
+                <a href="register.html"><button>Register</button></a>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
