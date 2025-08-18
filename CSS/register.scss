@@ -16,7 +16,7 @@ body{
 
 main{
     width: 100vw;
-    height: 88vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,4 +85,38 @@ form{
         }
       }
 
+}
+
+@media(max-width: 768px){
+    main{
+        height: 90vh;
+    }
+    form{
+        width: 80%;
+        max-width: 500px;
+
+        .input-group{
+            font-size: 1.2rem;
+        }
+
+        button{
+            width: 40%;
+        }
+    }
+}
+
+@media(max-width: 480px){
+    main{
+        height: 90vh;
+    }
+    form{
+        width: 90%;
+        .input-group{
+            font-size: 1rem;
+        }
+
+        button{
+            width: 60%;
+        }
+    }
 }

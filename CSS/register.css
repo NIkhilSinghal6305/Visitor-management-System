@@ -16,7 +16,7 @@ body {
 
 main {
   width: 100vw;
-  height: 88vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,4 +77,34 @@ form button {
 form button:hover {
   background: linear-gradient(90deg, #ffd700, #ff8c00);
   color: black;
+}
+
+@media (max-width: 768px) {
+  main {
+    height: 90vh;
+  }
+  form {
+    width: 80%;
+    max-width: 500px;
+  }
+  form .input-group {
+    font-size: 1.2rem;
+  }
+  form button {
+    width: 40%;
+  }
+}
+@media (max-width: 480px) {
+  main {
+    height: 90vh;
+  }
+  form {
+    width: 90%;
+  }
+  form .input-group {
+    font-size: 1rem;
+  }
+  form button {
+    width: 60%;
+  }
 }/*# sourceMappingURL=register.css.map */
