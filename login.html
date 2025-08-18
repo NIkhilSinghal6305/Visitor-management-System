@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin login</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-box {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+ h2{
+    font-size: 3rem;
+    font-weight: 500;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.556);
+  }
+
+form {
+  width: 40%;
+  max-width: 500px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(203, 202, 202, 0.061);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 0 15px #cfcfcf;
+}
+form .input-group {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 2px 5px rgba(15, 15, 15, 0.5568627451);
+  outline: none;
+}
+form .input-group:hover {
+  box-shadow: 2px 2px 4px black;
+}
+form .input-group:focus {
+  border-color: #1d468f;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+form div label {
+  color: #0f0f0f;
+  font-weight: 500;
+  opacity: 0.9;
+  font-size: 1rem;
+}
+form button {
+  width: 30%;
+  margin: 0 auto;
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(90deg, #00f5ff, #008cff);
+  color: black;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+form button:hover {
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  color: black;
+}
+
+@media (max-width: 768px) {
+   .login-box{
+    height: 60vh;
+  }
+  form {
+    width: 80%;
+    max-width: 500px;
+  }
+  form .input-group {
+    font-size: 1.2rem;
+  }
+  form button {
+    width: 40%;
+  }
+}
+@media (max-width: 480px) {
+
+  .login-box{
+    height: 60vh;
+  }
+  form {
+    width: 90%;
+  }
+  form .input-group {
+    font-size: 1rem;
+  }
+  form button {
+    width: 60%;
+  }
+}/*# sourceMappingURL=register.css.map */
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="login-box">
+    <h2>Login</h2>
+    <form onsubmit="return validateLogin()">
+
+      <div>
+        <label for="identifier">Email or Phone</label>
+        <input  class="input-group" type="text" id="identifier" placeholder="Enter email or phone number" required>
+      </div>
+
+
+      <div>
+        <label for="password">Password</label>
+        <input  class="input-group" type="password" id="password" placeholder="Enter password" required>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+   <script>
+    fetch("navbar.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+    });
+    function validateLogin() {
+      const identifier = document.getElementById("identifier").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // ✅ Set your allowed credentials here
+      const validEmail = "user@example.com";
+      const validPhone = "9876543210";
+      const validPassword = "12345";
+
+      if ((identifier === validEmail || identifier === validPhone) && password === validPassword) {
+        // redirect if correct
+        window.location.href = "register.html"; 
+        return false; // prevent default form submit
+      } else {
+        alert("Invalid Email/Phone or Password!");  
+        return false; // stay on same page
+      }
+    }
+  </script>
+</body>
+</html>
