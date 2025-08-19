@@ -163,7 +163,7 @@ form button:hover {
 
       if ((identifier === validEmail || identifier === validPhone) && password === validPassword) {
         // redirect if correct
-        window.location.href = "register.html"; 
+        window.open("admin-dashboard.html", "_blank");  
         return false; // prevent default form submit
       } else {
         alert("Invalid Email/Phone or Password!");  

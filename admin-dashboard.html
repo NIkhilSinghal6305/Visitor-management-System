@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      width: 100%;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f4f6f9;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 3rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 1rem;    
+      text-align: center;
+    }
+    th {
+      background: #1d468f;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background: #c3c2c2b9;
+    }
+    .toggle-icon {
+  display: none;
+}
+td[data-label]::before {
+  content: "";
+  display: none;
+}
+
+    /* Accordion style for mobile */
+@media (max-width: 768px) {
+    .toggle-icon {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none; /* hide table header */
+  }
+
+  tbody tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  tbody td {
+    display: none; /* hide details initially */
+    text-align: left;
+    padding: 0.8rem;
+    border: none;
+  }
+
+  tbody td:first-child {
+    display: block;   /* only School Name visible */
+    font-weight: bold;
+    background: #1d468f;
+    color: #fff;
+    cursor: pointer;
+    padding: 1rem;
+  }
+
+  tbody tr.active td {
+    display: block;  /* expand details */
+  }
+
+  tbody tr.active td:first-child {
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <h2>Registered Schools Data</h2>
+  <table id="schoolTable">
+    <thead>
+      <tr>
+        <th>School Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Contact Person</th>
+        <th>Students</th>
+        <th>Visit Date</th>
+        <th>Time Slot</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data will be injected here -->
+    </tbody>
+  </table>
+
+<script>
+  // ✅ Fetch data from localStorage
+  const schools = JSON.parse(localStorage.getItem("schools")) || [];
+  const tbody = document.querySelector("#schoolTable tbody");
+
+  if (schools.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7">No schools registered yet.</td></tr>`;
+  } else {
+    schools.forEach(school => {
+      // Create a new row
+      const row = document.createElement("tr");
+
+      // Fill row data
+      row.innerHTML = `
+        <td class="school-name">
+          ${school.username} <span class="toggle-icon">▶</span>
+        </td>
+         <td data-label="Email">${school.email}</td>
+  <td data-label="Phone">${school.phone}</td>
+  <td data-label="Contact Person">${school.contactName}</td>
+  <td data-label="Students">${school.students}</td>
+  <td data-label="Visit Date">${school.visitDate}</td>
+  <td data-label="Time Slot">${school.timeSlot}</td>
+      `;
+
+      tbody.appendChild(row);
+
+      // ✅ Accordion toggle for mobile view
+      const toggle = row.querySelector(".school-name");
+      toggle.addEventListener("click", () => {
+        row.classList.toggle("active");
+        const icon = row.querySelector(".toggle-icon");
+        if (row.classList.contains("active")) {
+          icon.textContent = "▼";
+        } else {
+          icon.textContent = "▶";
+        }
+      });
+    });
+  }
+</script>
+
+
+</body>
+</html>

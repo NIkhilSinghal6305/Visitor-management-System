@@ -52,14 +52,44 @@
 
 
     <script>
-        fetch("navbar.html")
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("navbar").innerHTML = data;
-            });
+  // ✅ Load navbar
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
 
+  // ✅ Handle form submission and store data in localStorage
+  document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Stop page reload
 
-    </script>
+    // Collect form data
+    const schoolData = {
+      username: document.getElementById("username").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      contactName: document.getElementById("contact-name").value.trim(),
+      students: document.querySelector("input[name='students']").value.trim(),
+      visitDate: document.getElementById("visit-date").value,
+      timeSlot: document.getElementById("time-slot").value
+    };
+
+    // ✅ Fetch existing data from localStorage
+    let schools = JSON.parse(localStorage.getItem("schools")) || [];
+
+    // ✅ Add new entry
+    schools.push(schoolData);
+
+    // ✅ Save back to localStorage
+    localStorage.setItem("schools", JSON.stringify(schools));
+
+    alert("School registered successfully!");
+
+    // ✅ Clear form fields after submission
+    document.querySelector("form").reset();
+  });
+</script>
+
 </body>
 
 </html>
