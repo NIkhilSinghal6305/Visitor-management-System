@@ -114,6 +114,18 @@ td[data-label]::before {
     </tbody>
   </table>
 
+  <button id="clearDataBtn" style="
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;">
+  Clear All Data
+</button>
+
+
 <script>
   // ✅ Fetch data from localStorage
   const schools = JSON.parse(localStorage.getItem("schools")) || [];
@@ -154,6 +166,14 @@ td[data-label]::before {
       });
     });
   }
+
+  document.getElementById("clearDataBtn").addEventListener("click", () => {
+  if (confirm("Are you sure you want to clear all registered school data?")) {
+    localStorage.removeItem("schools");
+    location.reload(); // refresh dashboard to update table
+  }
+});
+
 </script>
 
 
