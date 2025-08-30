@@ -16,7 +16,6 @@ html {
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  position: relative;
 }
 
 /*Header*/
@@ -25,10 +24,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(180deg, #243367, #16253c);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background: linear-gradient(180deg, #344688, #2a446b);
 }
 .navbar .logo a {
   text-decoration: none;
@@ -85,7 +81,7 @@ main {
 
 /*hero section*/
 .hero {
-  aspect-ratio: 16/6;
+  aspect-ratio: 16/8;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,7 +106,7 @@ main {
   color: black;
 }
 .hero h1 {
-  font-size: 4rem;
+  font-size: 4.5rem;
   color: #fff;
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
@@ -166,7 +162,7 @@ main {
   width: 100%;
   overflow: hidden;
   padding: 2rem;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
   position: relative;
 }
 .gallery h1 {
@@ -197,9 +193,82 @@ main {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
+.getIntouch {
+  width: 100%;
+  margin: 4rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+.getIntouch .card_get {
+  width: 50%;
+  max-width: 500px;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(203, 202, 202, 0.061);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 0 15px #cfcfcf;
+}
+.getIntouch .card_get textarea {
+  max-width: 80%;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+.getIntouch .card_get h1 {
+  font-size: 3rem;
+  opacity: 0.9;
+  font-weight: 600;
+  font-style: italic;
+}
+.getIntouch .card_get .input-group {
+  width: 80%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 2px 2px 5px rgba(15, 15, 15, 0.55);
+}
+.getIntouch .card_get .input-group:hover {
+  box-shadow: 2px 2px 4px black;
+}
+.getIntouch .card_get .input-group:focus {
+  border-color: rgba(38, 91, 182, 0.9058823529);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
+}
+.getIntouch .card_get button {
+  width: 20%;
+  padding: 8px 1rem;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background: linear-gradient(90deg, #00f5ff, #008cff);
+  color: rgba(0, 0, 0, 0.838);
+}
+.getIntouch .card_get button:hover {
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+}
+.getIntouch .map {
+  width: 50%;
+  height: 70vh;
+  max-height: 600px;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 6px rgba(90, 89, 89, 0.774);
+}
+
 footer {
   width: 100%;
-  background: linear-gradient(180deg, rgba(28, 39, 75, 0.7960784314), #142743);
+  background: linear-gradient(to right bottom, rgba(77, 95, 147, 0.831372549), #233e61);
   color: #cfefff;
   padding: 2rem 3rem;
 }
@@ -370,6 +439,26 @@ footer .footer p {
   .gallery::-webkit-scrollbar {
     display: none;
   }
+  .getIntouch {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  .getIntouch .card_get {
+    width: 70%;
+  }
+  .getIntouch .card_get h1 {
+    font-size: 2.2rem;
+  }
+  .getIntouch .card_get .input-group {
+    font-size: 0.8rem;
+  }
+  .getIntouch .map {
+    width: 70%;
+    height: 50vh;
+  }
   /* Footer */
   footer {
     padding: 1.5rem;
@@ -414,5 +503,14 @@ footer .footer p {
   }
   .about-us .card h2 {
     font-size: 1rem;
+  }
+  .getIntouch .card_get {
+    width: 90%;
+  }
+  .getIntouch .card_get button {
+    width: 40%;
+  }
+  .getIntouch .map {
+    width: 90%;
   }
 }/*# sourceMappingURL=style.css.map */
