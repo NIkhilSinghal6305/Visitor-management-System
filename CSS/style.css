@@ -264,6 +264,10 @@ main {
   border: none;
   border-radius: 1rem;
   box-shadow: 0 0 6px rgba(90, 89, 89, 0.774);
+  transition: all 0.3s linear;
+}
+.getIntouch .map:hover {
+  transform: scale(1.03);
 }
 
 footer {
