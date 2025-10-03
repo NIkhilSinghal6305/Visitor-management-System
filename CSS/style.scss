@@ -2,7 +2,7 @@
   text-decoration: none;
   color: black;
 }
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,7 +12,7 @@ body {
   width: 100%;
   perspective: 1200px;
 }
-html {
+html{
   font-size: clamp(16px, 1vw, 20px);
 }
 body {
@@ -215,7 +215,7 @@ main {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  position: relative;
+  gap: 1rem;
 
   .card_get {
     width: 50%;
@@ -264,7 +264,9 @@ main {
     button {
       width: 20%;
       padding: 8px 1rem;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-size: 1rem;
       border-radius: 10px;
       outline: none;
