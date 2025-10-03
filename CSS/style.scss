@@ -86,7 +86,7 @@ main {
 
 /*hero section*/
 .hero {
-  aspect-ratio: 16/8;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -298,7 +298,8 @@ footer {
   padding: 2rem 3rem;
   .content {
     display: flex;
-    justify-content: space-evenly;
+    gap: 3rem;
+    justify-content: center;
     h3 {
       color: black;
       font-weight: 600;
@@ -338,6 +339,11 @@ footer {
         }
       }
     }
+    .responsive-div{
+
+      display: flex;
+      gap: 2rem;
+    
     .key-features {
       ul {
         list-style: none;
@@ -370,6 +376,7 @@ footer {
           }
         }
       }
+    }
     }
     .social-media {
       div {
@@ -522,7 +529,7 @@ footer {
     padding: 1.5rem;
 
     .content {
-      flex-direction: column;
+      flex-wrap: wrap;
       align-items: center;
       text-align: center;
       gap: 2rem;
@@ -532,6 +539,11 @@ footer {
       .quick-links,
       .social-media {
         width: 100%;
+      }
+
+      .responsive-div{
+        gap: 0;
+        justify-content: space-evenly;
       }
 
       h3 {
